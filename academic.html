@@ -3,35 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academic Improvement Tool</title>
-  <link rel="stylesheet" href="academic.css">
+  <title>Calculate Your Grades (Initial Page)</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Boost Your Grades</h1>
-    <h2>Track Your Progress</h2>
-  </header>
-  <main>
-    <section id="subject-entry">
-      <p>Enter the number of subjects you want to track:</p>
-      <form id="subject-form">
-        <input type="number" id="num-subjects" name="num-subjects" min="1" required>
-        <br>
-        <button type="submit">Let's Go!</button>
-      </form>
-    </section>
-    <section id="subject-marks" style="display: none;">
-      <h2>Enter Subject and Marks</h2>
-      <form id="marks-form">
-        </form>
-      <button id="calculate-button">Calculate Results</button>
-      <div id="results" style="display: none;">
-        <h3>Results</h3>
-        <p id="average-mark"></p>
-        <p id="feedback"></p>
-      </div>
-    </section>
-  </main>
-  <script src="academic_logic.js"></script>
+  <div class="container">
+    <h1>Calculate Your Grades</h1>
+    <p>Get started by entering the number of subjects.</p>
+    <input type="number" id="num-subjects" min="1" required>
+    <button id="lets-go-btn">Let's Go!</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
