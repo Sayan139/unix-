@@ -1,0 +1,69 @@
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f2f0; /* Light beige background */
+  }
+  
+  /* Option Styles */
+  .option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease-in-out;  /* Add hover effect */
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from links */
+    color: #333333; /* Text color */
+    background-color: #f0f0f0; /* Light beige background */
+  }
+  
+  .option h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #c0392b; /* Primary red for headings */
+  }
+  
+  .option p {
+    font-size: 1em;
+  }
+  
+  /* Hover Effects */
+  .option:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    background-color: #e0e0e0; /* Lighter beige on hover */
+  }
+  
+  .option:after { /* Subtle border on hover */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .option:hover:after {
+    border-color: #c0392b; /* Primary red border on hover */
+  }
+  
+  /* Improved Readability */
+  a {
+    color: inherit; /* Inherit text color from parent elements */
+  }
+  
+  /* Responsiveness (Optional) */
+  @media (max-width: 768px) {
+    .option-container {
+      flex-direction: column; /* Stack options on smaller screens */
+    }
+  }
+  
