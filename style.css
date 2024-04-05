@@ -1,87 +1,69 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #f0f5ff; /* Light blue background */
 }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
+.header {
+    background-color: #445c80;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
+.main {
+    padding: 20px;
+    text-align: center;
+    height: 100vh; /* Set height to viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* Ensure position is set to relative */
+    overflow: hidden; /* Hide any overflow content */
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.jpg'); /* URL to your background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Apply blur effect */
+    z-index: -1; /* Ensure the background is behind the content */
 }
 
-nav li {
-  display: inline-block;
-  margin-right: 20px;
+.about-section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: left;
 }
 
-nav li a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: bold;
+.big-text {
+    font-size: 6em; /* Larger font size */
+    margin-bottom: 50px;
 }
 
-nav li a:hover {
-  color: #ddd;
+.login {
+    margin-top: 20px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-  position: relative;  /* Enable relative positioning for background image */
+.login-button {
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
 }
 
-.background-img {
-  position: absolute;  /* Position the image absolutely within the container */
-  top: 0;  /* Set the top position to 0 */
-  left: 0;  /* Set the left position to 0 */
-  width: 100%;  /* Stretch the image to cover the entire container width */
-  height: 100%;  /* Stretch the image to cover the entire container height */
-  filter: blur(5px);  /* Apply blur effect with a strength of 5px (adjust as needed) */
-  /* Optional: Set an opacity to control background visibility through content */
-  /* opacity: 0.5; */
-  z-index: -1;  /* Place the image behind other elements in the container */
-}
-
-h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  color: #333;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-p {
-  font-size: 1.5em;
-  color: #666;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.login-btn {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.login-btn:hover {
-  background-color: #0069d9;
+.login-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
