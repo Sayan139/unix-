@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentorship Form</title>
+  <link rel="stylesheet" href="mentor.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Mentorship Form</h2>
+  
+  <form id="mentorshipForm">
+    <label for="yearsTeachingExperience">How many years of teaching/tutoring experience do you have?</label>
+    <input type="number" id="yearsTeachingExperience" min="0" required>
+
+    <label for="preferredSubject">Which subject(s) would you like to mentor students in?</label>
+    <input type="text" id="preferredSubject" required>
+
+    <label for="yearsIndustryExperience">How many years of industry experience do you have?</label>
+    <input type="number" id="yearsIndustryExperience" min="0" required>
+
+    <label for="degreeType">Select your highest degree type:</label>
+    <select id="degreeType" name="degreeType" required>
+      <option value="btech">B.Tech</option>
+      <option value="mtech">M.Tech</option>
+      <option value="other">Other</option>
+    </select>
+
+    <div id="degreeMarksInput" style="display: none;">
+      <label for="degreeMarks">Enter your degree marks (%):</label>
+      <input type="number" id="degreeMarks" min="0" max="100" required>
+    </div>
+
+    <label for="userName">Enter your name:</label>
+    <input type="text" id="userName" required>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <div id="thankYouMessage" style="display: none;">
+    <h3>Thank you, <span id="submittedUserName"></span>, for submitting your details!</h3>
+    <p>We will get in touch with you soon.</p>
+  </div>
+</div>
+
+<script>
+  function submitForm() {
+    // Retrieve form input values
+    const yearsTeachingExperience = document.getElementById('yearsTeachingExperience').value;
+    const preferredSubject = document.getElementById('preferredSubject').value;
+    const yearsIndustryExperience = document.getElementById('yearsIndustryExperience').value;
+    const degreeType = document.getElementById('degreeType').value;
+    const degreeMarks = document.getElementById('degreeMarks').value;
+    const userName = document.getElementById('userName').value;
+
+    // Display the submitted user name in the thank you message
+    document.getElementById('submittedUserName').textContent = userName;
+
+    // Hide the form and display the thank you message
+    document.getElementById('mentorshipForm').style.display = 'none';
+    document.getElementById('thankYouMessage').style.display = 'block';
+  }
+
+  document.getElementById('degreeType').addEventListener('change', function() {
+    const selectedDegree = this.value;
+    const degreeMarksInput = document.getElementById('degreeMarksInput');
+
+    if (selectedDegree === 'btech' || selectedDegree === 'mtech') {
+      degreeMarksInput.style.display = 'block';
+    } else {
+      degreeMarksInput.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

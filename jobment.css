@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f5f9; /* Light blue background */
+    color: #333; /* Dark text color */
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff; /* White container background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #1a73e8; /* Blue heading color */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    padding: 12px 20px;
+    margin-top: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff; /* White text color */
+    background-color: #1a73e8; /* Blue button background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0d47a1; /* Darker blue on hover */
+  }
+  

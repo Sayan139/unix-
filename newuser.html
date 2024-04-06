@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Existing User</title>
+  <link rel="stylesheet" href="newuser.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Existing User Login</h2>
+  <form id="nameForm">
+    <label for="userName">Enter your name:</label>
+    <input type="text" id="userName" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="greeting" style="display: none;"></div>
+
+  <div id="mentorshipOptions" style="display: none;">
+    <p id="userGreeting"></p>
+    <p>What do you need help with today?</p>
+    <div class="options">
+      <a href="jobment.html" class="option">Job Mentorship</a>
+      <a href="academic.html" class="option">Academic Mentorship</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('nameForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const userName = document.getElementById('userName').value;
+    document.getElementById('greeting').textContent = `Hey ${userName}! What do you need help with today?`;
+    document.getElementById('userGreeting').textContent = `Welcome, ${userName}!`;
+    document.getElementById('nameForm').style.display = 'none';
+    document.getElementById('mentorshipOptions').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

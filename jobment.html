@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Mentorship Form</title>
+  <link rel="stylesheet" href="jobment.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Job Mentorship Form</h2>
+  
+  <form id="mentorshipForm">
+    <label for="yearsExperience">How many years of experience do you have?</label>
+    <input type="number" id="yearsExperience" min="0" required>
+
+    <label for="industry">Which industry do you work in?</label>
+    <input type="text" id="industry" required>
+
+    <label for="jobTitle">What is your current job position?</label>
+    <input type="text" id="jobTitle" required>
+
+    <label for="contactNumber">Contact Number:</label>
+    <input type="tel" id="contactNumber" required pattern="[0-9]{10}" placeholder="Enter 10-digit phone number">
+
+    <label for="howDidYouKnow">How did you hear about us?</label>
+    <select id="howDidYouKnow" name="howDidYouKnow">
+      <option value="socialMedia">Social Media</option>
+      <option value="friend">From a Friend</option>
+      <option value="jobSite">Job Website</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="additionalQuestion">Additional Question:</label>
+    <textarea id="additionalQuestion" rows="4"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="thankYouMessage" style="display: none;">
+    <h3>Thank you for submitting your details!</h3>
+    <p>We will get in touch with you soon.</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('mentorshipForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const yearsExperience = document.getElementById('yearsExperience').value;
+    const industry = document.getElementById('industry').value;
+    const jobTitle = document.getElementById('jobTitle').value;
+    const contactNumber = document.getElementById('contactNumber').value;
+    const howDidYouKnow = document.getElementById('howDidYouKnow').value;
+    const additionalQuestion = document.getElementById('additionalQuestion').value;
+
+    // Here you can handle form submission, e.g., send data to a server or display a message
+    console.log("Years of Experience:", yearsExperience);
+    console.log("Industry:", industry);
+    console.log("Job Title:", jobTitle);
+    console.log("Contact Number:", contactNumber);
+    console.log("How did you hear about us:", howDidYouKnow);
+    console.log("Additional Question:", additionalQuestion);
+
+    // Display the thank you message and hide the form
+    document.getElementById('mentorshipForm').style.display = 'none';
+    document.getElementById('thankYouMessage').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

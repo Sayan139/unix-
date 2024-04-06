@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Mentorship Form</title>
+  <link rel="stylesheet" href="academic.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Academic Mentorship Form</h2>
+  
+  <form id="mentorshipForm">
+    <label for="academicLevel">Are you in school or college?</label>
+    <select id="academicLevel" name="academicLevel" required>
+      <option value="school">School</option>
+      <option value="college">College</option>
+    </select>
+
+    <div id="classYearInput" style="display: none;">
+      <label for="classYear">Which class/year are you in?</label>
+      <input type="text" id="classYear">
+    </div>
+
+    <label for="userName">Enter your name:</label>
+    <input type="text" id="userName" required>
+
+    <div id="courseInput" style="display: none;">
+      <label for="course">Enter your course/stream:</label>
+      <input type="text" id="course">
+    </div>
+
+    <label for="reason">Why do you want academic mentorship?</label>
+    <textarea id="reason" rows="4" required></textarea>
+
+    <label for="howDidYouHear">How did you hear about us?</label>
+    <select id="howDidYouHear" name="howDidYouHear">
+      <option value="socialMedia">Social Media</option>
+      <option value="friend">From a Friend</option>
+      <option value="school">Through School</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="numSubjects">Number of subjects:</label>
+    <input type="number" id="numSubjects" min="1" required>
+
+    <div id="subjectScores" style="display: none;">
+      <h3>Enter Subject Scores:</h3>
+      <div id="subjectInputs"></div>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="thankYouMessage" style="display: none;">
+    <h3>Thank you, <span id="submittedUserName"></span>, for submitting your details!</h3>
+    <p>We will get in touch with you soon.</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('mentorshipForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Retrieve form input values
+    const userName = document.getElementById('userName').value;
+
+    // Display the submitted user name in the thank you message
+    document.getElementById('submittedUserName').textContent = userName;
+
+    // Hide the form and display the thank you message
+    document.getElementById('mentorshipForm').style.display = 'none';
+    document.getElementById('thankYouMessage').style.display = 'block';
+  });
+
+  document.getElementById('academicLevel').addEventListener('change', function() {
+    const academicLevel = this.value;
+    const classYearInput = document.getElementById('classYearInput');
+    const courseInput = document.getElementById('courseInput');
+
+    if (academicLevel === 'school') {
+      classYearInput.style.display = 'block';
+      courseInput.style.display = 'none';
+    } else if (academicLevel === 'college') {
+      classYearInput.style.display = 'none';
+      courseInput.style.display = 'block';
+    }
+  });
+
+  document.getElementById('numSubjects').addEventListener('change', function() {
+    const numSubjects = parseInt(this.value);
+    const subjectInputs = document.getElementById('subjectInputs');
+    subjectInputs.innerHTML = '';
+
+    for (let i = 1; i <= numSubjects; i++) {
+      const label = document.createElement('label');
+      label.textContent = `Subject ${i} Name:`;
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = `subject${i}Name`;
+      input.required = true;
+
+      const markLabel = document.createElement('label');
+      markLabel.textContent = `Marks for Subject ${i}:`;
+      const markInput = document.createElement('input');
+      markInput.type = 'number';
+      markInput.name = `subject${i}Marks`;
+      markInput.required = true;
+
+      subjectInputs.appendChild(label);
+      subjectInputs.appendChild(input);
+      subjectInputs.appendChild(markLabel);
+      subjectInputs.appendChild(markInput);
+      subjectInputs.appendChild(document.createElement('br'));
+    }
+
+    document.getElementById('subjectScores').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
