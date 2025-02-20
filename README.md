@@ -1,4 +1,24 @@
-this is the file where i have uploaded my hackthon files on the web dev hackthon where i solo worked on and i am really putin work in the project without any knoledge in web developent
-and also i am have done only front end part of the code so the data base or back end part is not available so please any one know can pin me i jave attached my link din profile 
-and also this a website of a mentorship platfrom named as unix where students as well as mentors can come to visit it and help each other fo every ones better future so that it this is 
-my reasy me section thak you for reading i am writing this in the collage 1st year second semsester 
+Unix Mentorship Platform
+
+Welcome to Unix, a mentorship platform where students and mentors can connect, share knowledge, and help each other grow for a better future.
+
+About the Project
+
+This project was built as part of a web development hackathon, where I solo developed the frontend without prior knowledge of web development. I put in significant effort to create the platform, and while the backend/database is not currently implemented, I welcome any contributions from experienced developers.
+
+Current Status
+
+Frontend Completed ✅
+Backend Not Available ❌ (Looking for collaborators!)
+Looking for Contributors
+
+If you're experienced in backend development and would like to contribute, feel free to reach out! You can connect with me on LinkedIn.
+
+Built With
+
+HTML, CSS, JavaScript (Frontend)
+About Me
+
+I am currently in my first year, second semester of college, and this project represents my early steps into web development. I appreciate all feedback and guidance!
+
+Thank you for visiting! 🚀
